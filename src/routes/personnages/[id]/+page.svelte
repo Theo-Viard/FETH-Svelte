@@ -22,15 +22,32 @@
       quote = quotes;
       persos = personnages;
       groupes = groups;
-      // remember to convert the ID to a number
-      perso = persos.find((perso) => perso.IDPERSONNAGE === parseInt($page.params.id));
+      perso = persos.find(
+        (perso) => perso.IDPERSONNAGE === parseInt($page.params.id),
+      );
     } catch (error) {
       console.error(error);
     }
   });
-    
 </script>
 
+<div class="centered-top-app-bar">
+  <TopAppBar>
+    <Row>
+      <Section align="end" toolbar>
+        <a href="/personnages">
+          <IconButton class="material-icons custom-button">
+            personnages
+          </IconButton>
+        </a>
+        <a href="/equipes">
+          <IconButton class="material-icons custom-button">
+            Développeurs
+          </IconButton>
+      </Section>
+    </Row>
+  </TopAppBar>
+</div>
 
 <main>
   <div class="personnage-container">
@@ -80,4 +97,3 @@
     margin-top: 50px;
   }
 </style>
-

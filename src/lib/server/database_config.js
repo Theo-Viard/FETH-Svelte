@@ -31,4 +31,10 @@ export const getPersonnage = (id) => {
     const stmt = db.prepare('SELECT * FROM PERSO WHERE IDPERSONNAGE = ?');
     return stmt.get(id);
 }
+
+// get dev members
+export const getEquipes = () => {
+    const stmt = db.prepare('SELECT * FROM EQUIPE');
+    return stmt.all();
+}
 export default db;

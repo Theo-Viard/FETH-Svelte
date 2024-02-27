@@ -41,24 +41,10 @@
               personnages
             </IconButton>
           </a>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/musiques")}
-          >
-            Musiques
-          </IconButton>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/jeu")}
-          >
-            Gameplay
-          </IconButton>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/equipe")}
-          >
-            Développeurs
-          </IconButton>
+          <a href="/equipes">
+            <IconButton class="material-icons custom-button">
+              Développeurs
+            </IconButton>
         </Section>
       </Row>
     </TopAppBar>

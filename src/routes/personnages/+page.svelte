@@ -41,30 +41,15 @@
     <TopAppBar>
       <Row>
         <Section align="end" toolbar>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/personnages")}
-          >
-            Personnages
-          </IconButton>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/musiques")}
-          >
-            Musiques
-          </IconButton>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/jeu")}
-          >
-            Gameplay
-          </IconButton>
-          <IconButton
-            class="material-icons custom-button"
-            on:click={() => handleNavigation("/equipe")}
-          >
-            Développeurs
-          </IconButton>
+          <a href="/personnages">
+            <IconButton class="material-icons custom-button">
+              personnages
+            </IconButton>
+          </a>
+          <a href="/equipes">
+            <IconButton class="material-icons custom-button">
+              Développeurs
+            </IconButton>
         </Section>
       </Row>
     </TopAppBar>
