@@ -10,6 +10,7 @@
     Media,
     MediaContent,
   } from "@smui/card";
+  import LayoutGrid, { Cell, InnerGrid } from "@smui/layout-grid";
 
   let randomQuote = "";
   let gameInformation = [];
@@ -50,37 +51,43 @@
             <IconButton class="material-icons custom-button">
               Développeurs
             </IconButton>
-        </Section>
+          </a></Section
+        >
       </Row>
     </TopAppBar>
   </div>
-
-  {#each groupes as groupe}
-    <div>
-      <h2>{groupe.NOMGROUPE}</h2>
-      <div class="personnages-container">
-        {#each persos.filter((p) => p.GROUPE === groupe.ID) as perso}
-            <div class="personnage-card">
-              <a href="/personnages/{perso.IDPERSONNAGE}">
-              <Card>
-                <Media class="card-media-16x9" aspectRatio="16x9">
-                  <MediaContent>
-                    <img
-                      src="/personnages/{perso.PORTRAIT}"
-                      alt="{perso.PRENOM} {perso.NOM}"
-                    />
-                  </MediaContent>
-                </Media>
-                <Content>
-                  <h2>{perso.PRENOM} {perso.NOM}</h2>
-                </Content>
-              </Card>
-              </a>
-            </div>
-        {/each}
+  <LayoutGrid>
+    {#each groupes as groupe}
+      <div class="group-container">
+        <h2 id="nomgroupe">{groupe.NOMGROUPE}</h2>
+        <div class="personnages-container">
+          <InnerGrid class="rangement">
+            {#each persos.filter((p) => p.GROUPE === groupe.ID) as perso}
+              <Cell>
+                <div class="personnage-card">
+                  <a href="/personnages/{perso.IDPERSONNAGE}">
+                    <Card>
+                      <Media class="card-media-16x9" aspectRatio="16x9">
+                        <MediaContent>
+                          <img
+                            src="/personnages/{perso.PORTRAIT}"
+                            alt="{perso.PRENOM} {perso.NOM}"
+                          />
+                        </MediaContent>
+                      </Media>
+                      <Content>
+                        <h2>{perso.PRENOM} {perso.NOM}</h2>
+                      </Content>
+                    </Card>
+                  </a>
+                </div>
+              </Cell>
+            {/each}
+          </InnerGrid>
+        </div>
       </div>
-    </div>
-  {/each}
+    {/each}
+  </LayoutGrid>
 </body>
 
 <style lang="scss">

@@ -10,6 +10,7 @@
 	"devDependencies": {
 		"@smui/card": "^7.0.0-beta.16",
 		"@smui/icon-button": "^7.0.0-beta.16",
+		"@smui/layout-grid": "^7.0.0-beta.16",
 		"@smui/list": "^7.0.0-beta.16",
 		"@smui/top-app-bar": "^7.0.0-beta.16",
 		"@sveltejs/adapter-auto": "^3.0.0",
